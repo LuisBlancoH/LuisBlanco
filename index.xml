@@ -31,5 +31,554 @@
   <guid>https://luisblancohoyos.com/posts/first-post/</guid>
   <pubDate>Sun, 02 Aug 2026 07:00:00 GMT</pubDate>
 </item>
+<item>
+  <title>Kitchen sink</title>
+  <link>https://luisblancohoyos.com/posts/test-post/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This post exists to verify that everything renders correctly. Delete it once you’ve checked.</p>
+<p>It has <code>draft: true</code> in the frontmatter, so it appears in <code>quarto preview</code> but won’t show up on the published site or in listings.</p>
+<section id="prose-and-inline-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="prose-and-inline-formatting">Prose and inline formatting</h2>
+<p>Regular paragraph text at the default measure. Here is <strong>bold</strong>, here is <em>italic</em>, here is <strong><em>both</em></strong>, here is <del>strikethrough</del>, and here is <code>inline_code()</code> which should render in rust.</p>
+<p>An <a href="https://quarto.org">external link</a> and an <a href="../../cv.html">internal link</a> to the CV.</p>
+<p>A footnote for an aside that doesn’t belong in the main flow.<sup>1</sup> And an inline one.<sup>2</sup></p>
+<blockquote class="blockquote">
+<p>A blockquote. It should have a left border, italic text, and the muted grey.</p>
+<p>Second paragraph of the same quote.</p>
+</blockquote>
+<hr>
+<p>That was a horizontal rule.</p>
+</section>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<p>Unordered:</p>
+<ul>
+<li>First item</li>
+<li>Second item
+<ul>
+<li>Nested item</li>
+<li>Another nested item</li>
+</ul></li>
+<li>Third item</li>
+</ul>
+<p>Ordered:</p>
+<ol type="1">
+<li>First step</li>
+<li>Second step
+<ol type="1">
+<li>Sub-step</li>
+<li>Another sub-step</li>
+</ol></li>
+<li>Third step</li>
+</ol>
+<p>Task list:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Completed thing</label></li>
+<li><label><input type="checkbox">Incomplete thing</label></li>
+</ul>
+<p>Definition list, which is what the CV uses:</p>
+<dl>
+<dt><strong>Term</strong> — a qualifier</dt>
+<dd>
+The definition, indented beneath.
+</dd>
+</dl>
+</section>
+<section id="math" class="level2">
+<h2 class="anchored" data-anchor-id="math">Math</h2>
+<p>Inline math like <img src="https://latex.codecogs.com/png.latex?H%20=%20-%5Csum_i%20p_i%20%5Clog%20p_i"> should sit on the baseline without disturbing line height.</p>
+<p>Display math:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%7BL%7D(%5Ctheta)%20=%20%5Cmathbb%7BE%7D_%7Bx%20%5Csim%20%5Cmathcal%7BD%7D%7D%5Cleft%5B%20-%5Clog%20p_%5Ctheta(x)%20%5Cright%5D%0A"></p>
+<p>An aligned block:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Ctext%7BAttention%7D(Q,%20K,%20V)%20&amp;=%20%5Ctext%7Bsoftmax%7D%5Cleft(%5Cfrac%7BQK%5E%5Ctop%7D%7B%5Csqrt%7Bd_k%7D%7D%5Cright)V%20%5C%5C%0A%5Ctext%7BMultiHead%7D(Q,%20K,%20V)%20&amp;=%20%5Ctext%7BConcat%7D(%5Ctext%7Bhead%7D_1,%20%5Cdots,%20%5Ctext%7Bhead%7D_h)W%5EO%0A%5Cend%7Baligned%7D%0A"></p>
+<p>A numbered, referenceable equation:</p>
+<p><span id="eq-kl"><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BKL%7D(p%20%5Cparallel%20q)%20=%20%5Csum_i%20p_i%20%5Clog%20%5Cfrac%7Bp_i%7D%7Bq_i%7D%0A%5Ctag%7B1%7D"></span></p>
+<p>Referenced as Equation&nbsp;1.</p>
+<p>A matrix:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%20=%20%5Cbegin%7Bpmatrix%7D%0Aa_%7B11%7D%20&amp;%20a_%7B12%7D%20%5C%5C%0Aa_%7B21%7D%20&amp;%20a_%7B22%7D%0A%5Cend%7Bpmatrix%7D%0A"></p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>A non-executing block, for showing syntax without running it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> entropy(p, eps<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e-12</span>):</span>
+<span id="cb1-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Shannon entropy of a probability vector."""</span></span>
+<span id="cb1-3">    p <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> p <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> p.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span>
+<span id="cb1-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>(p <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> np.log(p <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> eps)).<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div></div>
+<p>Another language, to check highlighting is language-aware:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> render <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">&amp;&amp;</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> publish gh-pages</span></code></pre></div></div>
+<p>An executing chunk with the code visible:</p>
+<div id="72ae6e45" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">rng <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.default_rng(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>)</span>
+<span id="cb3-4">entropies <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> rng.beta(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span></span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"mean: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>entropies<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>mean()<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb3-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"median: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>np<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>median(entropies)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb3-8"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"below 0.5: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>(entropies <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>mean()<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.1%}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>mean: 1.169
+median: 1.108
+below 0.5: 14.2%</code></pre>
+</div>
+</div>
+<p>An executing chunk with the code folded behind a toggle, producing a figure:</p>
+<div id="cell-fig-entropy" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb5-2"></span>
+<span id="cb5-3">plt.rcParams.update({</span>
+<span id="cb5-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"figure.facecolor"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>,</span>
+<span id="cb5-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.facecolor"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>,</span>
+<span id="cb5-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"savefig.transparent"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb5-7">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text.color"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#888"</span>,</span>
+<span id="cb5-8">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.labelcolor"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#888"</span>,</span>
+<span id="cb5-9">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"xtick.color"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#888"</span>,</span>
+<span id="cb5-10">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ytick.color"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#888"</span>,</span>
+<span id="cb5-11">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.edgecolor"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#888"</span>,</span>
+<span id="cb5-12">})</span>
+<span id="cb5-13"></span>
+<span id="cb5-14">fig, ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>))</span>
+<span id="cb5-15">ax.hist(entropies, bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">40</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#b04a24"</span>, edgecolor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>)</span>
+<span id="cb5-16">ax.set_xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"entropy (nats)"</span>)</span>
+<span id="cb5-17">ax.set_ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"count"</span>)</span>
+<span id="cb5-18">ax.spines[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"top"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"right"</span>]].set_visible(<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb5-19">plt.show()</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-entropy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-entropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://luisblancohoyos.com/posts/test-post/index_files/figure-html/fig-entropy-output-1.png" width="589" height="356" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-entropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distribution of attention entropy across heads
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure&nbsp;1 should be numbered, captioned, and clickable from that reference.</p>
+<p>A chunk with the code hidden entirely, showing only output:</p>
+<div id="dbd55f6a" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>If you can see this line but not the code that produced it, echo: false works.</code></pre>
+</div>
+</div>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<p>A Markdown table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;">Params</th>
+<th style="text-align: right;">Accuracy</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline</td>
+<td style="text-align: right;">110M</td>
+<td style="text-align: right;">84.2%</td>
+<td>Standard fine-tuning</td>
+</tr>
+<tr class="even">
+<td>+ pruning</td>
+<td style="text-align: right;">62M</td>
+<td style="text-align: right;">83.9%</td>
+<td>44% smaller</td>
+</tr>
+<tr class="odd">
+<td>+ distillation</td>
+<td style="text-align: right;">62M</td>
+<td style="text-align: right;">85.1%</td>
+<td>Best result</td>
+</tr>
+</tbody>
+</table>
+<p>A generated table, to check dataframe rendering:</p>
+<div class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb7-2"></span>
+<span id="cb7-3">pd.DataFrame({</span>
+<span id="cb7-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"layer"</span>: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>),</span>
+<span id="cb7-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mean_entropy"</span>: np.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">round</span>(rng.uniform(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>),</span>
+<span id="cb7-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dead_heads"</span>: rng.integers(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>),</span>
+<span id="cb7-7">})</span></code></pre></div></div>
+<div id="tbl-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="4">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics by layer
+</figcaption>
+<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">layer</th>
+<th data-quarto-table-cell-role="th">mean_entropy</th>
+<th data-quarto-table-cell-role="th">dead_heads</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>3.221</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>1.911</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>1.261</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>2.932</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>2.744</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>6</td>
+<td>1.851</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Referenced as Table&nbsp;1.</p>
+</section>
+<section id="callouts" class="level2">
+<h2 class="anchored" data-anchor-id="callouts">Callouts</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A note callout. Default styling, no title.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="With a custom title">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>With a custom title
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tip callouts take a title attribute.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Warning callout, for caveats that matter.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Collapsed by default
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This one starts folded. Useful for long derivations you don’t want interrupting the main argument.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="citations" class="level2">
+<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<p>A claim requiring a source <span class="citation" data-cites="vaswani2017">(Vaswani et al. 2017)</span>. Another with a page reference <span class="citation" data-cites="vaswani2017">(Vaswani et al. 2017, 4)</span>. An in-text citation: <span class="citation" data-cites="vaswani2017">Vaswani et al. (2017)</span> introduced the architecture.</p>
+<p>The bibliography renders below, assuming <code>references.bib</code> exists.</p>
+</section>
+<section id="layout" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="layout">Layout</h2>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This is margin content. Whether it appears in the margin depends on your layout CSS — currently the margin column is collapsed, so it will likely render inline.</p>
+</div></div><p>Two side-by-side blocks:</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Left column content. Useful for comparing two things.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Right column content. Should sit alongside the left on wide screens and stack on mobile.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="long-paragraph-for-measure" class="level2">
+<h2 class="anchored" data-anchor-id="long-paragraph-for-measure">Long paragraph, for measure</h2>
+<p>This paragraph exists to check the reading measure at your current max-width. A comfortable line length runs somewhere between sixty and seventy-five characters, and the way to judge it is not by counting but by reading: if your eye loses the start of the next line on the return sweep, the column is too wide, and if the text feels choppy and your eye jumps too often, it is too narrow. Read this paragraph at normal speed and see whether anything catches. Then check it again on your phone, where the column will be constrained by the viewport rather than by the max-width, and where the font size matters more than the measure.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-vaswani2017" class="csl-entry">
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, et al. 2017. <span>“Attention Is All You Need.”</span> <em>Advances in Neural Information Processing Systems</em> 30.
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is the footnote body. It should appear at the bottom of the page with a back-link.↩︎</p></li>
+<li id="fn2"><p>Inline footnotes are defined where they appear, which is convenient for short remarks.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>meta</category>
+  <category>testing</category>
+  <guid>https://luisblancohoyos.com/posts/test-post/</guid>
+  <pubDate>Sun, 02 Aug 2026 07:00:00 GMT</pubDate>
+</item>
 </channel>
 </rss>

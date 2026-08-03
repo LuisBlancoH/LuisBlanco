@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Posts",
     "section": "",
-    "text": "I work on machine learning. Mostly interpretability and why small models sometimes beat large ones. Occasionally essays about other things.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 2, 2026\n\n\nTitle\n\n\n\n\n\n\nNo matching items"
+    "text": "I work on machine learning. Mostly interpretability and why small models sometimes beat large ones. Occasionally essays about other things.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 2, 2026\n\n\nTitle\n\n\n\n\n\n\nAug 2, 2026\n\n\nKitchen sink\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/first-post/index.html",
@@ -47,6 +47,90 @@
     "title": "Title",
     "section": "",
     "text": "Title\nHi this is a test!"
+  },
+  {
+    "objectID": "posts/test-post/index.html",
+    "href": "posts/test-post/index.html",
+    "title": "Kitchen sink",
+    "section": "",
+    "text": "This post exists to verify that everything renders correctly. Delete it once you’ve checked.\nIt has draft: true in the frontmatter, so it appears in quarto preview but won’t show up on the published site or in listings."
+  },
+  {
+    "objectID": "posts/test-post/index.html#prose-and-inline-formatting",
+    "href": "posts/test-post/index.html#prose-and-inline-formatting",
+    "title": "Kitchen sink",
+    "section": "Prose and inline formatting",
+    "text": "Prose and inline formatting\nRegular paragraph text at the default measure. Here is bold, here is italic, here is both, here is strikethrough, and here is inline_code() which should render in rust.\nAn external link and an internal link to the CV.\nA footnote for an aside that doesn’t belong in the main flow.1 And an inline one.2\n\nA blockquote. It should have a left border, italic text, and the muted grey.\nSecond paragraph of the same quote.\n\n\nThat was a horizontal rule."
+  },
+  {
+    "objectID": "posts/test-post/index.html#lists",
+    "href": "posts/test-post/index.html#lists",
+    "title": "Kitchen sink",
+    "section": "Lists",
+    "text": "Lists\nUnordered:\n\nFirst item\nSecond item\n\nNested item\nAnother nested item\n\nThird item\n\nOrdered:\n\nFirst step\nSecond step\n\nSub-step\nAnother sub-step\n\nThird step\n\nTask list:\n\nCompleted thing\nIncomplete thing\n\nDefinition list, which is what the CV uses:\n\nTerm — a qualifier\n\nThe definition, indented beneath."
+  },
+  {
+    "objectID": "posts/test-post/index.html#math",
+    "href": "posts/test-post/index.html#math",
+    "title": "Kitchen sink",
+    "section": "Math",
+    "text": "Math\nInline math like \\(H = -\\sum_i p_i \\log p_i\\) should sit on the baseline without disturbing line height.\nDisplay math:\n\\[\n\\mathcal{L}(\\theta) = \\mathbb{E}_{x \\sim \\mathcal{D}}\\left[ -\\log p_\\theta(x) \\right]\n\\]\nAn aligned block:\n\\[\n\\begin{aligned}\n\\text{Attention}(Q, K, V) &= \\text{softmax}\\left(\\frac{QK^\\top}{\\sqrt{d_k}}\\right)V \\\\\n\\text{MultiHead}(Q, K, V) &= \\text{Concat}(\\text{head}_1, \\dots, \\text{head}_h)W^O\n\\end{aligned}\n\\]\nA numbered, referenceable equation:\n\\[\n\\text{KL}(p \\parallel q) = \\sum_i p_i \\log \\frac{p_i}{q_i}\n\\tag{1}\\]\nReferenced as Equation 1.\nA matrix:\n\\[\nA = \\begin{pmatrix}\na_{11} & a_{12} \\\\\na_{21} & a_{22}\n\\end{pmatrix}\n\\]"
+  },
+  {
+    "objectID": "posts/test-post/index.html#code",
+    "href": "posts/test-post/index.html#code",
+    "title": "Kitchen sink",
+    "section": "Code",
+    "text": "Code\nA non-executing block, for showing syntax without running it:\ndef entropy(p, eps=1e-12):\n    \"\"\"Shannon entropy of a probability vector.\"\"\"\n    p = p / p.sum()\n    return -(p * np.log(p + eps)).sum()\nAnother language, to check highlighting is language-aware:\nquarto render && quarto publish gh-pages\nAn executing chunk with the code visible:\n\nimport numpy as np\n\nrng = np.random.default_rng(42)\nentropies = rng.beta(2, 5, 1000) * 4\n\nprint(f\"mean: {entropies.mean():.3f}\")\nprint(f\"median: {np.median(entropies):.3f}\")\nprint(f\"below 0.5: {(entropies &lt; 0.5).mean():.1%}\")\n\nmean: 1.169\nmedian: 1.108\nbelow 0.5: 14.2%\n\n\nAn executing chunk with the code folded behind a toggle, producing a figure:\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.rcParams.update({\n    \"figure.facecolor\": \"none\",\n    \"axes.facecolor\": \"none\",\n    \"savefig.transparent\": True,\n    \"text.color\": \"#888\",\n    \"axes.labelcolor\": \"#888\",\n    \"xtick.color\": \"#888\",\n    \"ytick.color\": \"#888\",\n    \"axes.edgecolor\": \"#888\",\n})\n\nfig, ax = plt.subplots(figsize=(7, 4))\nax.hist(entropies, bins=40, color=\"#b04a24\", edgecolor=\"none\")\nax.set_xlabel(\"entropy (nats)\")\nax.set_ylabel(\"count\")\nax.spines[[\"top\", \"right\"]].set_visible(False)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Distribution of attention entropy across heads\n\n\n\n\n\nFigure 1 should be numbered, captioned, and clickable from that reference.\nA chunk with the code hidden entirely, showing only output:\n\n\nIf you can see this line but not the code that produced it, echo: false works."
+  },
+  {
+    "objectID": "posts/test-post/index.html#tables",
+    "href": "posts/test-post/index.html#tables",
+    "title": "Kitchen sink",
+    "section": "Tables",
+    "text": "Tables\nA Markdown table:\n\n\n\nMethod\nParams\nAccuracy\nNotes\n\n\n\n\nBaseline\n110M\n84.2%\nStandard fine-tuning\n\n\n+ pruning\n62M\n83.9%\n44% smaller\n\n\n+ distillation\n62M\n85.1%\nBest result\n\n\n\nA generated table, to check dataframe rendering:\n\nimport pandas as pd\n\npd.DataFrame({\n    \"layer\": range(1, 7),\n    \"mean_entropy\": np.round(rng.uniform(0.2, 3.5, 6), 3),\n    \"dead_heads\": rng.integers(0, 12, 6),\n})\n\n\n\nTable 1: Summary statistics by layer\n\n\n\n\n\n\n\n\n\n\nlayer\nmean_entropy\ndead_heads\n\n\n\n\n0\n1\n3.221\n4\n\n\n1\n2\n1.911\n9\n\n\n2\n3\n1.261\n3\n\n\n3\n4\n2.932\n3\n\n\n4\n5\n2.744\n10\n\n\n5\n6\n1.851\n7\n\n\n\n\n\n\n\n\n\n\nReferenced as Table 1."
+  },
+  {
+    "objectID": "posts/test-post/index.html#callouts",
+    "href": "posts/test-post/index.html#callouts",
+    "title": "Kitchen sink",
+    "section": "Callouts",
+    "text": "Callouts\n\n\n\n\n\n\nNote\n\n\n\nA note callout. Default styling, no title.\n\n\n\n\n\n\n\n\nTipWith a custom title\n\n\n\nTip callouts take a title attribute.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nWarning callout, for caveats that matter.\n\n\n\n\n\n\n\n\nImportantCollapsed by default\n\n\n\n\n\nThis one starts folded. Useful for long derivations you don’t want interrupting the main argument."
+  },
+  {
+    "objectID": "posts/test-post/index.html#citations",
+    "href": "posts/test-post/index.html#citations",
+    "title": "Kitchen sink",
+    "section": "Citations",
+    "text": "Citations\nA claim requiring a source (Vaswani et al. 2017). Another with a page reference (Vaswani et al. 2017, 4). An in-text citation: Vaswani et al. (2017) introduced the architecture.\nThe bibliography renders below, assuming references.bib exists."
+  },
+  {
+    "objectID": "posts/test-post/index.html#layout",
+    "href": "posts/test-post/index.html#layout",
+    "title": "Kitchen sink",
+    "section": "Layout",
+    "text": "Layout\n\n\nThis is margin content. Whether it appears in the margin depends on your layout CSS — currently the margin column is collapsed, so it will likely render inline.\nTwo side-by-side blocks:\n\n\n\nLeft column content. Useful for comparing two things.\n\n\nRight column content. Should sit alongside the left on wide screens and stack on mobile."
+  },
+  {
+    "objectID": "posts/test-post/index.html#long-paragraph-for-measure",
+    "href": "posts/test-post/index.html#long-paragraph-for-measure",
+    "title": "Kitchen sink",
+    "section": "Long paragraph, for measure",
+    "text": "Long paragraph, for measure\nThis paragraph exists to check the reading measure at your current max-width. A comfortable line length runs somewhere between sixty and seventy-five characters, and the way to judge it is not by counting but by reading: if your eye loses the start of the next line on the return sweep, the column is too wide, and if the text feels choppy and your eye jumps too often, it is too narrow. Read this paragraph at normal speed and see whether anything catches. Then check it again on your phone, where the column will be constrained by the viewport rather than by the max-width, and where the font size matters more than the measure."
+  },
+  {
+    "objectID": "posts/test-post/index.html#references",
+    "href": "posts/test-post/index.html#references",
+    "title": "Kitchen sink",
+    "section": "References",
+    "text": "References\n\n\nVaswani, Ashish, Noam Shazeer, Niki Parmar, et al. 2017. “Attention Is All You Need.” Advances in Neural Information Processing Systems 30."
+  },
+  {
+    "objectID": "posts/test-post/index.html#footnotes",
+    "href": "posts/test-post/index.html#footnotes",
+    "title": "Kitchen sink",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is the footnote body. It should appear at the bottom of the page with a back-link.↩︎\nInline footnotes are defined where they appear, which is convenient for short remarks.↩︎"
   },
   {
     "objectID": "about.html",
