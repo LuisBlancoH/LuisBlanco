@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Luis Blanco</title>
-<link>https://luisblancoh.github.io/luisblanco/</link>
-<atom:link href="https://luisblancoh.github.io/luisblanco/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://luisblancohoyos.com/</link>
+<atom:link href="https://luisblancohoyos.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>Notes and experiments in machine learning</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Sun, 02 Aug 2026 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Most attention heads are doing nothing</title>
-  <link>https://luisblancoh.github.io/luisblanco/posts/first-post/</link>
+  <link>https://luisblancohoyos.com/posts/first-post/</link>
   <description><![CDATA[ 
 
 
@@ -67,7 +67,7 @@ font-style: inherit;">"entropy (nats)"</span>)</span>
 <div id="fig-entropy" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-entropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://luisblancoh.github.io/luisblanco/posts/first-post/index_files/figure-html/fig-entropy-output-1.png" width="566" height="429" class="figure-img">
+<img src="https://luisblancohoyos.com/posts/first-post/index_files/figure-html/fig-entropy-output-1.png" width="566" height="429" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-entropy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Entropy by layer
@@ -83,7 +83,7 @@ Figure&nbsp;1: Entropy by layer
 
  ]]></description>
   <category>interpretability</category>
-  <guid>https://luisblancoh.github.io/luisblanco/posts/first-post/</guid>
+  <guid>https://luisblancohoyos.com/posts/first-post/</guid>
   <pubDate>Sun, 02 Aug 2026 07:00:00 GMT</pubDate>
 </item>
 </channel>
