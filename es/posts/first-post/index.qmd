@@ -1,0 +1,9 @@
+---
+title: "La mayoría de las cabezas de atención no hacen nada"
+description: "Midiendo la entropía por capas en un transformer pequeño"
+date: 2026-08-02
+categories: [interpretabilidad]
+---
+
+He estado analizando un transformer de 6 capas. La entropía
+de atención se desploma después de la capa 4.

@@ -1,0 +1,21 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var path = window.location.pathname;
+  var isES = path.indexOf("/es/") === 0 || path === "/es";
+
+  var link = null;
+  document.querySelectorAll(".navbar a").forEach(function (a) {
+    var t = a.textContent.trim();
+    if (t === "ES" || t === "EN") link = a;
+  });
+
+  if (link) {
+    link.textContent = isES ? "EN" : "ES";
+    link.setAttribute("href", isES ? (path.replace(/^\/es/, "") || "/") : "/es" + path);
+    link.setAttribute("aria-label", isES ? "English" : "Español");
+  }
+
+  var brand = document.querySelector(".navbar-brand");
+  if (brand) brand.setAttribute("href", isES ? "/es/" : "/");
+});
+</script>

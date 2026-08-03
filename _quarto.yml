@@ -8,16 +8,14 @@ website:
   description: "Notes and experiments in machine learning"
   navbar:
     right:
-      - text: "Writing"
-        href: index.qmd
-      - text: "CV"
-        href: cv.qmd
-      - icon: github
-        href: https://github.com/LuisBlancoH
+      - text: "ES"
+        href: /es/
   draft-mode: unlinked
+  search: false
 
 format:
   html:
+    include-after-body: lang-toggle.html
     theme:
       light: [litera, theme-light.scss]
       dark: [litera, theme-dark.scss]

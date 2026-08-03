@@ -1,26 +1,22 @@
 ---
 listing:
   contents: posts/*/index.qmd
-  exclude:
-    lang: "es"
   sort: "date desc"
   type: table
   fields: [date, title]
   table-hover: false
   sort-ui: false
   filter-ui: false
-  date-format: "MMM D, YYYY"
+  date-format: "D MMM YYYY"
   feed: true
 page-layout: article
 toc: false
-title-block-style: none
 ---
 
-I work on machine learning. Mostly interpretability and
-why small models sometimes beat large ones. Occasionally
-essays about other things.
+Trabajo en aprendizaje automático. Sobre todo interpretabilidad
+y por qué los modelos pequeños a veces superan a los grandes.
+Ocasionalmente ensayos sobre otras cosas.
 
 [CV](cv.qmd) · [GitHub](https://github.com/LuisBlancoH) · [Email](mailto:luisblancohoyos@pm.me)
-
 
 # Posts
