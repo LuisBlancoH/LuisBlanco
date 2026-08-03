@@ -419,14 +419,30 @@ figcaption,
   margin-top: 0.75rem;
 }
 
-@media (min-width: 992px) {
-  .navbar .nav-link[aria-label="Español"],
-  .navbar .nav-link[aria-label="English"] {
-    position: relative;
-    top: -3.5px;
-  }
+// ── Responsive & navbar ───────────────────────────────────
+
+// Fixed height so the bar doesn't jump when items rearrange
+.navbar,
+.navbar > .container-fluid {
+  min-height: 3.5rem;
 }
 
+// Focus rings only for keyboard navigation, not after clicks
+.navbar a:focus,
+.quarto-navbar-tools a:focus,
+.quarto-color-scheme-toggle:focus {
+  outline: none;
+  box-shadow: none;
+  background: none !important;
+}
+
+.navbar a:focus-visible,
+.quarto-navbar-tools a:focus-visible {
+  outline: 2px solid $link-color;
+  outline-offset: 2px;
+}
+
+// Wide equations scroll within their own box, not the page
 .MathJax_Display,
 mjx-container[display="true"],
 .math.display {
@@ -437,6 +453,14 @@ mjx-container[display="true"],
 
 body {
   overflow-x: hidden;
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-link[aria-label="Español"],
+  .navbar .nav-link[aria-label="English"] {
+    position: relative;
+    top: -3.5px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -530,7 +554,7 @@ body {
   }
 
   // Bootstrap Icons glyph, not an SVG
-.quarto-navbar-tools .bi,
+  .quarto-navbar-tools .bi,
   .quarto-color-scheme-toggle .bi,
   .quarto-navigation-tool .bi {
     position: relative;
