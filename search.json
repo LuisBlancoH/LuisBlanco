@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "Download PDF"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "Education",
+    "text": "Education\n\nMSc Machine Learning — Universidad X, 2024–2026\n\nThesis on attention sparsity. Advisor: Someone.\n\n\nBSc Computer Science — Universidad Y, 2020–2024"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "CV",
+    "section": "Experience",
+    "text": "Experience\n\nResearch Intern — Lab Name, Summer 2025\n\nBuilt a training pipeline for sparse transformers. Cut memory use by 40%."
+  },
+  {
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
+    "title": "CV",
+    "section": "Publications",
+    "text": "Publications\n\nLuis Blanco, Coauthor. Title of the paper. NeurIPS 2025. [paper] [code]"
+  },
+  {
+    "objectID": "cv.html#skills",
+    "href": "cv.html#skills",
+    "title": "CV",
+    "section": "Skills",
+    "text": "Skills\nPyTorch, JAX, distributed training, Rust"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Luis Blanco",
+    "section": "",
+    "text": "I work on machine learning. Mostly interpretability and why small models sometimes beat large ones. Occasionally essays about other things.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 2, 2026\n\n\nMost attention heads are doing nothing\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/first-post/index.html",
+    "href": "posts/first-post/index.html",
+    "title": "Most attention heads are doing nothing",
+    "section": "",
+    "text": "I’ve been poking at a 6-layer transformer. Attention entropy collapses hard after layer 4."
+  },
+  {
+    "objectID": "posts/first-post/index.html#the-measurement",
+    "href": "posts/first-post/index.html#the-measurement",
+    "title": "Most attention heads are doing nothing",
+    "section": "The measurement",
+    "text": "The measurement\nStandard Shannon entropy over each head’s attention distribution:\n\\[H_h = -\\sum_i p_i \\log p_i\\]\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nplt.hist(np.random.beta(2, 5, 1000) * 4, bins=40, color=\"#b04a24\")\nplt.xlabel(\"entropy (nats)\")\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Entropy by layer\n\n\n\n\n\nAs Figure 1 shows, most heads sit near zero."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]
