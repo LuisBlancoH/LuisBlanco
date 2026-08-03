@@ -279,3 +279,7 @@ main.content {
   padding: 3rem 1.25rem 4rem;
   box-sizing: border-box;
 }
+
+#title-block-header:not(:has(.title)) {
+  display: none;
+}

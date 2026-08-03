@@ -1,5 +1,4 @@
 ---
-title: "Luis Blanco"
 listing:
   contents: posts
   sort: "date desc"
