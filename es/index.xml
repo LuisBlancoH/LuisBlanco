@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Luis Blanco</title>
+<link>https://luisblancohoyos.com/es/</link>
+<atom:link href="https://luisblancohoyos.com/es/index.xml" rel="self" type="application/rss+xml"/>
+<description>Notes and experiments in machine learning</description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Sun, 02 Aug 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>La mayoría de las cabezas de atención no hacen nada</title>
+  <link>https://luisblancohoyos.com/es/posts/first-post/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>He estado analizando un transformer de 6 capas. La entropía de atención se desploma después de la capa 4.</p>
+
+
+
+ ]]></description>
+  <category>interpretabilidad</category>
+  <guid>https://luisblancohoyos.com/es/posts/first-post/</guid>
+  <pubDate>Sun, 02 Aug 2026 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

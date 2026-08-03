@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "es/index.html",
+    "href": "es/index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Trabajo en aprendizaje automático. Sobre todo interpretabilidad y por qué los modelos pequeños a veces superan a los grandes. Ocasionalmente ensayos sobre otras cosas.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTítulo\n\n\n\n\n\n\n\n\n2 ago 2026\n\n\nLa mayoría de las cabezas de atención no hacen nada\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "CV",
@@ -138,5 +145,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "es/posts/first-post/index.html",
+    "href": "es/posts/first-post/index.html",
+    "title": "La mayoría de las cabezas de atención no hacen nada",
+    "section": "",
+    "text": "He estado analizando un transformer de 6 capas. La entropía de atención se desploma después de la capa 4."
   }
 ]

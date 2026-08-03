@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://luisblancohoyos.com/es/index.html</loc>
+    <lastmod>2026-08-03T19:09:32.549Z</lastmod>
+  </url>
+  <url>
     <loc>https://luisblancohoyos.com/cv.html</loc>
     <lastmod>2026-08-03T04:01:24.998Z</lastmod>
   </url>
   <url>
     <loc>https://luisblancohoyos.com/index.html</loc>
-    <lastmod>2026-08-03T04:23:15.333Z</lastmod>
+    <lastmod>2026-08-03T19:09:10.120Z</lastmod>
   </url>
   <url>
     <loc>https://luisblancohoyos.com/posts/first-post/index.html</loc>
@@ -19,5 +23,9 @@
   <url>
     <loc>https://luisblancohoyos.com/about.html</loc>
     <lastmod>2026-08-03T04:01:24.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://luisblancohoyos.com/es/posts/first-post/index.html</loc>
+    <lastmod>2026-08-03T19:03:03.436Z</lastmod>
   </url>
 </urlset>
