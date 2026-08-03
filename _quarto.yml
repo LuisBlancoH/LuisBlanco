@@ -14,6 +14,7 @@ website:
         href: cv.qmd
       - icon: github
         href: https://github.com/LuisBlancoH
+  draft-mode: unlinked
 
 format:
   html:

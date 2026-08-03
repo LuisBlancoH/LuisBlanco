@@ -38,9 +38,9 @@ body {
 }
 
 // ── Layout ────────────────────────────────────────────────
-// ONE element owns the column. The title header is nested
-// inside it and must not repeat the padding, or it indents
-// twice.
+// One element owns the column. The title header is nested
+// inside it and must not repeat the padding.
+// `position: relative` makes this the anchor for margin notes.
 
 #quarto-content,
 .page-columns,
@@ -48,14 +48,21 @@ body {
   display: block !important;
 }
 
+#quarto-content {
+  position: relative;
+}
+
 #quarto-document-content,
 main.content {
-  max-width: 44rem;
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 1.25rem 4rem;
+  padding: 1.5rem 1.5rem 4rem;
   box-sizing: border-box;
+  position: relative;
 }
+
+// ── Title block ───────────────────────────────────────────
 
 #title-block-header {
   display: block;
@@ -66,6 +73,17 @@ main.content {
   border-bottom: none;
   background: none;
   min-height: 0;
+}
+
+// Separator only where there's a date (posts, not homepage)
+#title-block-header:has(.quarto-title-meta-contents) {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1.25rem;
+}
+
+// Homepage has no title, so collapse the empty header
+#title-block-header:not(:has(.title)) {
+  display: none;
 }
 
 #title-block-header > *,
@@ -89,7 +107,6 @@ main.content {
   margin-top: 0.45rem;
 }
 
-// "Published" label hidden, date kept
 .quarto-title-meta-heading {
   display: none;
 }
@@ -147,32 +164,115 @@ main blockquote a:hover {
   text-decoration: underline;
 }
 
-// ── Navbar ────────────────────────────────────────────────
+// ── Table of contents (left) ──────────────────────────────
+// Fixed, positioned from the page centre outward.
+// Needs `toc: true` in posts/_metadata.yml.
 
-.navbar {
-  border-bottom: 1px solid $border-color;
-  font-size: 0.95rem;
+#TOC,
+nav#TOC,
+#quarto-margin-sidebar,
+.sidebar.margin-sidebar {
+  position: fixed;
+  top: 6rem;
+  left: calc(50% - 24rem - 1.5rem - 11rem);
+  width: 11rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  float: none;
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
-.navbar a,
-.navbar a:hover {
+#TOC .toc-actions,
+#TOC h2,
+#quarto-margin-sidebar h2 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $muted-text;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+#TOC ul,
+#quarto-margin-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#TOC a,
+#quarto-margin-sidebar a {
+  display: block;
+  color: $muted-text;
   text-decoration: none;
+  padding: 0.2rem 0 0.2rem 0.6rem;
+  border-left: 2px solid transparent;
 }
 
-.navbar .nav-link {
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+#TOC a:hover,
+#quarto-margin-sidebar a:hover {
+  color: $body-color;
 }
 
-.navbar .nav-link:hover {
-  border-bottom-color: $border-color;
+#TOC a.active,
+#quarto-margin-sidebar a.active {
+  color: $body-color;
+  border-left-color: $link-color;
 }
 
-.navbar .nav-link.active {
-  color: $navbar-fg;
-  font-weight: 600;
-  border-bottom-color: $link-color;
+// ── Margin notes (right) ──────────────────────────────────
+// Inline by default; moved into the right margin on wide
+// screens, anchored to the article's own right edge.
+
+.column-margin,
+aside.column-margin {
+  position: static;
+  float: none;
+  width: auto;
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 1.25rem 1rem;
+  border-left: 2px solid $border-color;
+  font-size: 0.85rem;
+  color: $muted-text;
+  display: block;
+  clear: both;
 }
+
+.column-margin + p,
+aside.column-margin + p {
+  margin-top: 1.5rem;
+}
+
+// ── Wide-screen sidebars ──────────────────────────────────
+// Both columns appear and disappear together.
+
+@media (min-width: 1400px) {
+  .column-margin,
+  aside.column-margin {
+    position: absolute;
+    right: -12.5rem;
+    width: 11rem;
+    margin: 0;
+    padding: 0;
+    border-left: none;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 1399px) {
+  #TOC,
+  nav#TOC,
+  #quarto-margin-sidebar,
+  .sidebar.margin-sidebar {
+    display: none;
+  }
+}
+
 // ── Post listing ──────────────────────────────────────────
 
 .quarto-listing {
@@ -202,7 +302,6 @@ main blockquote a:hover {
   padding: 0.7rem 0.5rem;
   vertical-align: baseline;
   border: none;
-  position: relative;
 }
 
 .quarto-listing td:first-child {
@@ -214,18 +313,41 @@ main blockquote a:hover {
   letter-spacing: 0.02em;
 }
 
-.quarto-listing td a,
-.quarto-listing td a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-
+// Fills the cell so the title column is tappable, without an
+// overlay that can escape on mobile
 .quarto-listing td a,
 .quarto-listing td a:hover {
   color: inherit;
   text-decoration: none;
   display: block;
   width: 100%;
+}
+
+// ── Navbar ────────────────────────────────────────────────
+
+.navbar {
+  border-bottom: 1px solid $border-color;
+  font-size: 0.95rem;
+}
+
+.navbar a,
+.navbar a:hover {
+  text-decoration: none;
+}
+
+.navbar .nav-link {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.navbar .nav-link:hover {
+  border-bottom-color: $border-color;
+}
+
+.navbar .nav-link.active {
+  color: $navbar-fg;
+  font-weight: 600;
+  border-bottom-color: $link-color;
 }
 
 // ── Code fold and captions ────────────────────────────────
@@ -263,42 +385,36 @@ figcaption,
   text-decoration: none;
 }
 
-#title-block-header {
-  border-bottom: none;
-  padding-bottom: 0;
+.cell-output pre,
+.cell-output-stdout pre {
+  color: $body-color;
+  background: none;
+  border-left: 2px solid $border-color;
+  padding-left: 0.9rem;
 }
 
-#title-block-header:has(.quarto-title-meta-contents) {
-  border-bottom: 1px solid $border-color;
-  padding-bottom: 1.25rem;
-}
-#quarto-document-content,
-main.content {
-  max-width: 48rem;      // was 44rem
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3rem 1.25rem 4rem;
-  box-sizing: border-box;
+figcaption,
+.figure-caption,
+.quarto-figure figcaption {
+  color: $muted-text;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
-#title-block-header:not(:has(.title)) {
-  display: none;
+
+figure,
+.quarto-figure,
+.cell-output-display {
+  margin-bottom: 2rem;
 }
 
-#quarto-document-content,
-main.content {
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5rem 1.25rem 4rem;   // was 3rem on top
-  box-sizing: border-box;
-}
-
-#quarto-document-content,
-main.content {
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5rem 1.5rem 4rem;   // was 3rem on top
-  box-sizing: border-box;
+figcaption,
+.figure-caption,
+.quarto-figure figcaption {
+  color: $muted-text;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.75rem;
 }

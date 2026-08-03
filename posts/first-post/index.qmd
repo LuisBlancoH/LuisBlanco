@@ -1,30 +1,10 @@
 ---
-title: "Most attention heads are doing nothing"
+title: ""
 description: "Measuring entropy across layers in a small transformer"
 date: 2026-08-02
-categories: [interpretability]
+categories: []
+toc: false
 ---
 
-I've been poking at a 6-layer transformer. Attention entropy
-collapses hard after layer 4.
-
-## The measurement
-
-Standard Shannon entropy over each head's attention distribution:
-
-$$H_h = -\sum_i p_i \log p_i$$
-
-```{python}
-#| label: fig-entropy
-#| fig-cap: "Entropy by layer"
-#| code-fold: true
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-plt.hist(np.random.beta(2, 5, 1000) * 4, bins=40, color="#b04a24")
-plt.xlabel("entropy (nats)")
-plt.show()
-```
-
-As @fig-entropy shows, most heads sit near zero.
+# Title
+Hi this is a test! 

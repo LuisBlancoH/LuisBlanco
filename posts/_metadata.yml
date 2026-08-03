@@ -1,3 +1,4 @@
 freeze: true
 title-block-banner: false
-toc: false
+toc: true
+toc-depth: 3
