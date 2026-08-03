@@ -1,0 +1,25 @@
+---
+title: "Luis Blanco"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: table
+  fields: [date, title]
+  table-hover: false
+  sort-ui: false
+  filter-ui: false
+  date-format: "MMM D, YYYY"
+  feed: true
+page-layout: article
+toc: false
+title-block-style: none
+---
+
+I work on machine learning. Mostly interpretability and
+why small models sometimes beat large ones. Occasionally
+essays about other things.
+
+[CV](cv.qmd) · [GitHub](https://github.com/LuisBlancoH) · [Email](mailto:luisblancohoyos@pm.me)
+
+
+# Posts

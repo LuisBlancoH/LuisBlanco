@@ -1,0 +1,28 @@
+---
+title: "CV"
+toc: false
+---
+
+[Download PDF](cv.pdf)
+
+## Education
+
+**MSc Machine Learning** — Universidad X, 2024–2026
+: Thesis on attention sparsity. Advisor: Someone.
+
+**BSc Computer Science** — Universidad Y, 2020–2024
+
+## Experience
+
+**Research Intern** — Lab Name, Summer 2025
+: Built a training pipeline for sparse transformers. Cut
+  memory use by 40%.
+
+## Publications
+
+1. **Luis Blanco**, Coauthor. *Title of the paper*. NeurIPS 2025.
+   [[paper]](https://arxiv.org/abs/xxxx) [[code]](https://github.com/luisblanco/repo)
+
+## Skills
+
+PyTorch, JAX, distributed training, Rust

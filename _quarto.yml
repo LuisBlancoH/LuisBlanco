@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Luis Blanco"
+  site-url: "https://luisblancoh.github.io/luisblanco"
+  description: "Notes and experiments in machine learning"
+  navbar:
+    right:
+      - text: "Writing"
+        href: index.qmd
+      - text: "CV"
+        href: cv.qmd
+      - icon: github
+        href: https://github.com/LuisBlancoH
+
+format:
+  html:
+    theme:
+      light: [litera, theme-light.scss]
+      dark: [litera, theme-dark.scss]
+    respect-user-color-scheme: true
+    toc: false
+    title-block-banner: false
+    highlight-style:
+      light: arrow-light
+      dark: arrow-dark
+
+execute:
+  freeze: auto

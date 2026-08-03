@@ -1,0 +1,12 @@
+{
+  "hash": "177e083989213597b4f1a27c291dc54d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Most attention heads are doing nothing\"\ndescription: \"Measuring entropy across layers in a small transformer\"\ndate: 2026-08-02\ncategories: [interpretability]\n---\n\nI've been poking at a 6-layer transformer. Attention entropy\ncollapses hard after layer 4.\n\n## The measurement\n\nStandard Shannon entropy over each head's attention distribution:\n\n$$H_h = -\\sum_i p_i \\log p_i$$\n\n::: {#cell-fig-entropy .cell execution_count=1}\n``` {.python .cell-code code-fold=\"true\"}\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nplt.hist(np.random.beta(2, 5, 1000) * 4, bins=40, color=\"#b04a24\")\nplt.xlabel(\"entropy (nats)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Entropy by layer](index_files/figure-html/fig-entropy-output-1.png){#fig-entropy width=566 height=429}\n:::\n:::\n\n\nAs @fig-entropy shows, most heads sit near zero.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
