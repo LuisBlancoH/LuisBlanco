@@ -39,21 +39,14 @@
     "href": "index.html",
     "title": "Posts",
     "section": "",
-    "text": "I work on machine learning. Mostly interpretability and why small models sometimes beat large ones. Occasionally essays about other things.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 2, 2026\n\n\nMost attention heads are doing nothing\n\n\n\n\n\n\nNo matching items"
+    "text": "I work on machine learning. Mostly interpretability and why small models sometimes beat large ones. Occasionally essays about other things.\nCV · GitHub · Email\n\nPosts\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAug 2, 2026\n\n\nTitle\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/first-post/index.html",
     "href": "posts/first-post/index.html",
-    "title": "Most attention heads are doing nothing",
+    "title": "Title",
     "section": "",
-    "text": "I’ve been poking at a 6-layer transformer. Attention entropy collapses hard after layer 4."
-  },
-  {
-    "objectID": "posts/first-post/index.html#the-measurement",
-    "href": "posts/first-post/index.html#the-measurement",
-    "title": "Most attention heads are doing nothing",
-    "section": "The measurement",
-    "text": "The measurement\nStandard Shannon entropy over each head’s attention distribution:\n\\[H_h = -\\sum_i p_i \\log p_i\\]\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nplt.hist(np.random.beta(2, 5, 1000) * 4, bins=40, color=\"#b04a24\")\nplt.xlabel(\"entropy (nats)\")\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Entropy by layer\n\n\n\n\n\nAs Figure 1 shows, most heads sit near zero."
+    "text": "Title\nHi this is a test!"
   },
   {
     "objectID": "about.html",
